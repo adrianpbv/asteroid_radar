@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Radar de Asteroides</string>
+
+    <string name="next_week_asteroids">Ver todos los asteroides</string>
+    <string name="today_asteroids">Ver los asteroides de hoy</string>
+    <string name="hazardous_asteroids">Ver asteroides peligrosos</string>
+    <string name="no_hazardous_asteroids">Ver asteroides no peligrosos</string>
+    <string name="close_approach_data_title">Fecha de proximidad</string>
+    <string name="absolute_magnitude_title">Magnitud Absoluta</string>
+    <string name="estimated_diameter_title">Diametro estimado</string>
+    <string name="relative_velocity_title">Velocidad relativa</string>
+    <string name="distance_from_earth_title">Distancia desde la tierra</string>
+    <string name="astronomical_unit_format">%f au</string>
+    <string name="km_unit_format">%f km</string>
+    <string name="km_s_unit_format">%f km/s</string>
+    <string name="image_of_the_day">Imagen del dia</string>
+    <string name="astronomica_unit_explanation">La unidad astronomica (au) es una unidad de distancia, es aproximadamente la distancia de la Tierra al Sol e igual a unos 150 millones de kilómetros (93 millones de millas)</string>
+    <string name="astronomical_unit_explanation_button">Definicion de unidad astronomica</string>
+    <string name="not_hazardous_asteroid_image">Imagen para un asteroide no peligroso</string>
+    <string name="test_asteroid_2020">Asteroides 2020</string>
+    <string name="unavailable_image">Imagen no disponible</string>
+    <string name="asteroid_details">Detalles del asteroide</string>
+    <string name="description_hazardous_asteroid">Este asteroide es potencialmente peligroso</string>
+    <string name="description_no_hazardous_asteroid">Este asteroide no representa ningun riesgo para la tierra</string>
+    <string name="description_asteroid">El nombre del asteroide es %s, se encuentra a %f kilometros desde la tierra y se va a aproximar a la tierra el %s</string>
+    <string name="description_title_nasapicture">La imagen del dia se titula: %s</string>
+    <string name="date_format">dd-MM-yyyy</string>
+</resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_layout_id">
+
+    <data>
+
+        <variable
+            name="asteroid"
+            type="com.udacity.asteroidradar.ui.Asteroid" />
+
+        <variable
+            name="clickListener"
+            type="com.udacity.asteroidradar.main.AsteroidClickListener" />
+    </data>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:gravity="center_vertical"
+            android:onClick="@{() -> clickListener.onClick(asteroid)}"
+            android:orientation="horizontal"
+            app:setContentDescription = "@{asteroid}"
+            tools:background="@android:color/background_dark"
+            tools:context="com.udacity.asteroidradar.main.MainFragment">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_normal">
+
+
+                <TextView
+                    android:id="@+id/asteroid_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/item_asteroid_title"
+                    app:asteroidName="@{asteroid.codename}"
+                    tools:text="@string/test_asteroid_2020" />
+
+                <TextView
+                    android:id="@+id/asteroid_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    style="@style/item_asteroid_content"
+                    app:asteroidDate="@{asteroid.closeApproachDate}"
+                    tools:text="2015-08-09" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/asteroid_hazardous"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/normal_padding"
+                app:statusIcon="@{asteroid.potentiallyHazardous}"
+                tools:srcCompat="@drawable/ic_status_normal" />
+
+        </LinearLayout>
+</layout>

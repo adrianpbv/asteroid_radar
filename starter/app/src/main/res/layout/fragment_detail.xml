@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="asteroid"
-            type="com.udacity.asteroidradar.Asteroid" />
+            type="com.udacity.asteroidradar.ui.Asteroid" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -48,15 +47,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/close_approach_data_title"
-                        android:textColor="@color/default_text_color" />
+                        style="@style/item_asteroid_title"/>
 
                     <TextView
                         android:id="@+id/close_approach_date"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
+                        android:layout_marginTop="@dimen/margin_very_small"
                         android:text="@{asteroid.closeApproachDate}"
-                        android:textColor="@color/default_text_color"
+                        style="@style/item_asteroid_content"
                         tools:text="2020-02-01" />
                 </LinearLayout>
 
@@ -77,14 +76,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/absolute_magnitude_title"
-                            android:textColor="@color/default_text_color" />
+                            style="@style/item_asteroid_title"/>
 
                         <TextView
                             android:id="@+id/absolute_magnitude"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:textColor="@color/default_text_color"
+                            style="@style/item_asteroid_content"
                             app:astronomicalUnitText="@{asteroid.absoluteMagnitude}"
                             tools:text="25.126 au" />
                     </LinearLayout>
@@ -94,6 +93,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="16dp"
+                        android:contentDescription="@string/astronomica_unit_explanation"
                         app:srcCompat="@drawable/ic_help_circle" />
 
                 </LinearLayout>
@@ -103,48 +103,48 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:text="@string/estimated_diameter_title"
-                    android:textColor="@color/default_text_color" />
+                    style="@style/item_asteroid_title"/>
 
                 <TextView
                     android:id="@+id/estimated_diameter"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:textColor="@color/default_text_color"
+                    android:layout_marginTop="@dimen/margin_very_small"
+                    style="@style/item_asteroid_content"
                     app:kmUnitText="@{asteroid.estimatedDiameter}"
                     tools:text="0.82 km" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="@dimen/margin_high"
                     android:text="@string/relative_velocity_title"
-                    android:textColor="@color/default_text_color" />
+                    style="@style/item_asteroid_title"/>
 
                 <TextView
                     android:id="@+id/relative_velocity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:textColor="@color/default_text_color"
+                    android:layout_marginTop="@dimen/margin_very_small"
+                    style="@style/item_asteroid_content"
                     app:velocityText="@{asteroid.relativeVelocity}"
                     tools:text="11.9 km/s" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="@dimen/margin_high"
                     android:text="@string/distance_from_earth_title"
-                    android:textColor="@color/default_text_color" />
+                    style="@style/item_asteroid_title"/>
 
                 <TextView
                     android:id="@+id/distance_from_earth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:textColor="@color/default_text_color"
+                    android:layout_marginTop="@dimen/margin_very_small"
                     app:astronomicalUnitText="@{asteroid.distanceFromEarth}"
-                    tools:text="0.0924 au" />
+                    tools:text="0.0924 au"
+                    style="@style/item_asteroid_content"/>
 
             </LinearLayout>
         </ScrollView>
