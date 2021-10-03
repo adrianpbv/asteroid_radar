@@ -1,27 +1,20 @@
 package com.udacity.asteroidradar.repository
 
-import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
-import androidx.lifecycle.map
 import com.udacity.asteroidradar.api.getDay
 import com.udacity.asteroidradar.api.parseAsteroidsJsonResult
-import com.udacity.asteroidradar.database.AsteroidEntity
 import com.udacity.asteroidradar.database.AsteroidsDataBase
 import com.udacity.asteroidradar.database.asDomainModel
 import com.udacity.asteroidradar.database.asImageDomain
-import com.udacity.asteroidradar.main.AsteroidFilter
 import com.udacity.asteroidradar.network.AsteroidsApi
 import com.udacity.asteroidradar.network.NetworkData
 import com.udacity.asteroidradar.network.asDataBaseModel
 import com.udacity.asteroidradar.ui.Asteroid
 import com.udacity.asteroidradar.ui.NasaImage
-import com.udacity.asteroidradar.utils.Constants
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONObject
-import java.net.UnknownHostException
 import java.util.*
 
 /**
@@ -53,8 +46,7 @@ class Repository(private val database: AsteroidsDataBase) {
             val asteroids = parseAsteroidsJsonResult(
                 JSONObject(
                     AsteroidsApi.retrofitService.getAsteroids(
-                        START_DATE, END_DATE, Constants.API_KEY
-                    )
+                    START_DATE, END_DATE)
                 )
             )
             val networkData = NetworkData(asteroids)
@@ -67,7 +59,7 @@ class Repository(private val database: AsteroidsDataBase) {
      */
     suspend fun refreshImage() {
         withContext(Dispatchers.IO) {
-            val img = AsteroidsApi.retrofitService.getNasaDayImage(Constants.API_KEY, true)
+            val img = AsteroidsApi.retrofitService.getNasaDayImage(true)
 
             // Insert in the DataBase the nasa's day picture
             database.asteroidDao.insertPicture(img.toImageDatabase())
